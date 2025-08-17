@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  mediamtx:
+    image: bluenviron/mediamtx:latest
+    container_name: mediamtx_server
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      -./mediamtx.yml:/mediamtx.yml
+      
+  gerbera:
+    image: gerbera/gerbera:latest
+    container_name: gerbera_dlna_server
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      -./gerbera:/var/run/gerbera
+      -./gerbera/config.xml:/etc/gerbera/config.xml
+      -./gerbera/scripts:/scripts

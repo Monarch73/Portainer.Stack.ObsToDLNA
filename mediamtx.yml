@@ -1,0 +1,23 @@
+# Deaktivieren nicht benötigter Protokolle
+rtsp: no
+rtmp: no
+webrtc: no
+
+# Konfiguration des SRT-Listeners
+srtServer:
+  listenAddress: :8890
+
+# Globale HLS/LL-HLS-Einstellungen
+hls:
+  alwaysRemux: yes
+  lowLatency: yes
+  segmentDuration: 2s
+  partDuration: 500ms
+  segmentCount: 10
+  partHoldBack: 1.5s
+
+# Pfad-Konfiguration für den eingehenden Stream
+paths:
+  mystream:
+    # Der Pfad /mystream erbt die globalen HLS-Einstellungen
+  
