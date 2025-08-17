@@ -7,7 +7,7 @@ services:
     network_mode: host
     volumes:
       -./mediamtx.yml:/mediamtx.yml
-      
+
   gerbera:
     image: gerbera/gerbera:latest
     container_name: gerbera_dlna_server
@@ -16,4 +16,5 @@ services:
     volumes:
       -./gerbera:/var/run/gerbera
       -./gerbera/config.xml:/etc/gerbera/config.xml
-      -./gerbera/scripts:/scripts
+      -./gerbera/scripts:/usr/local/share/gerbera/js
+
